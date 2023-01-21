@@ -594,9 +594,9 @@ I_C_T UHKID03 4 NikAleKids3
 END
 
 I_C_T UHMAY01 18 NikImnes
-== CMNIKITJ IF ~GlobalGT("Chapter","GLOBAL",5)IsValidForPartyDialog("cmnikita")~ THEN
+== CMNIKITJ IF ~GlobalGT("Chapter","GLOBAL",17)IsValidForPartyDialog("cmnikita")~ THEN
 @2613 /* Imnesvale? This is a simple town, occupied by simple people, mostly farmers. If they need our help, we should offer it <CHARNAME>. */
-== CMNIKITJ IF ~!GlobalGT("Chapter","GLOBAL",5)IsValidForPartyDialog("cmnikita")~ THEN
+== CMNIKITJ IF ~!GlobalGT("Chapter","GLOBAL",17)IsValidForPartyDialog("cmnikita")~ THEN
 @2614 /* Imnesvale? This is a simple town, occupied by simple people, mostly farmers. If they need our help, we should offer it <CHARNAME> if you think Imoen can wait. */
 END
 

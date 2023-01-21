@@ -1,0 +1,175 @@
+@0    = ~Nikita NPC Mod~
+@1    = ~/****************************************~
+@2    = ~*Nikita NPC Mod Version 200	       *~
+@3    = ~*http://www.chosenofmystra.com	       *~
+@4    = ~*	Copyright 2011 JG Scott        *~
+@5    = ~*	BG2 ToB, BGT, BG2EE and EET  *~
+@6    = ~*	THIS FILE WILL INSTALL         *~
+@7    = ~*	NIKITA IN YOUR BG	       *~
+@8    = ~*    II DIRECTORY.                      *~
+@9    = ~*****************************************~
+@10   = ~Nikita~
+@11   = ~I see.~ [HFTHR029]
+@12   = ~We can't win this.~ [HFTHR001]
+@13   = ~3~
+@14   = ~4~
+@15   = ~5~
+@16   = ~6~
+@17   = ~Watch my back.~ [HFTHR008]
+@18   = ~We should rest soon. I'm dying to get out of these clothes.~ [HFTHR010]
+@19   = ~I didn't come all of this way to die of boredom.~ [HFTHR012]
+@20   = ~Lets spill some blood.~ [HFTHR003]
+@21   = ~You wanna taste of this?~ [HFTHR004]
+@22   = ~Are you ready for me?~ [HFTHR005]
+@23   = ~Any last words?~ [HFTHR006]
+@24   = ~You're gonna bleed.~ [HFTHR007]
+@25   = ~Ughh~ [HFTHR034]
+@26   = ~Dead~ [HFTHR037]
+@27   = ~I feel so cold.~ [HFTHR014]
+@28   = ~18~
+@29   = ~19~
+@30   = ~20~
+@31   = ~21~
+@32   = ~22~
+@33   = ~Yes?~ [HFTHR016]
+@34   = ~I'm here.~ [HFTHR017]
+@35   = ~You want me?~ [HFTHR018]
+@36   = ~Ready and willing.~ [HFTHR019]
+@37   = ~27~
+@38   = ~28~
+@39   = ~Right.~ [HFTHR023]
+@40   = ~Very well.~ [HFTHR024]
+@41   = ~Yes?~ [HFTHR025]
+@42   = ~Whatever you say.~ [HFTHR026]
+@43   = ~33~
+@44   = ~34~
+@45   = ~35~
+@46   = ~I'd kill for a hot bath right about now.~ [HFTHR030]
+@47   = ~Be careful where you point that thing.~ [HFTHR031]
+@48   = ~Argh.~ [HFTHR034]
+@49   = ~40~
+@50   = ~Don't expect me to carry the corpse back into town.~ [HFTHR040]
+@51   = ~Done~ [HFTHR027]
+@52   = ~44~
+@53   = ~45~
+@54   = ~NIKITA's past is something that she keeps to herself. From what you do know is that she was an orphan for a time until she was brought into Section in her late teens. They trained her to be a charismatic assassin who killed evil individuals. All of this was done for the greater good. But over time Section became corrupt and started to mirror the evil they were fighting. Nikita was liberated from Section when you destroyed the organization back in Baldur's Gate. After much searching, Nikita found you in Amn and wishes to repay you by helping in any way she can.~
+@55   = ~Dagger~
+@56   = ~Nikita's Dagger~
+@57   = ~The typical dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter than the dagger. 
+
+STATISTICS:
+
+Damage: 1D4
+Damage type: piercing
+Weight: 1
+Speed Factor: 2 
+Proficiency Type: Dagger
+Type: 1-handed
+Requires: 3 Strength
+Not Usable By:
+ Cleric
+ Beast Master~
+@58   = ~The typical dagger has a pointed, double-edged blade, as opposed to a knife which has a single edge and is a bit shorter.  This particular dagger is magical, having special bonuses to its speed, accuracy, and damage it causes. Also, since it is magical, is it capable of striking opponents that are immune to normal weapons, such as vampires, elementals and mummies. This dagger has been dipped in cobra venom making it extra deadly.
+
+STATISTICS:
+
+THAC0: +3 bonus
+Damage: 1D4 +3
+Damage type: piercing
+Poison: 30 damage in 15 seconds (save vs. death for none)
+Weight: 0
+Speed Factor: 0 
+Proficiency Type: Dagger
+Type: 1-handed
+Require: 3 Strength
+Usable By:
+Nikita~
+@59   = ~Leather Armor~
+@60   = ~Nikita's Leather Armor~
+@61   = ~This suit of leather armor is light and supple, and a pleasure to wear.
+
+STATISTICS:
+
+Armor Class: 8
+Weight: 15
+Requires: 3 Strength
+Not Usable By:
+ Mage
+ Kensai
+ Monk
+ Shapeshifter~
+@62   = ~This is Nikita's custom made leather armor. It was specifically made for her.
+
+STATISTICS:
+
+Bonuses: +20% to hide in shadows
+Armor Class: 3
+Weight: 5
+Requires: 3 Strength
+Usable By:
+Nikita~
+@63   = ~Long Sword~
+@64   = ~Nikita's Long Sword~
+@65   = ~These swords are usually referred to as doubled-edged swords, war swords, or military swords.  In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture, and may vary within the same culture depending on the era.  Among the most common characteristics of all long swords is their length, which ranges from 35 inches to 47 inches.  In the latter case, the blade is known to take up 40 inches of the total length.  Most long swords have a double-edged blade and a sharp point at the tip.  Despite the tip, the long sword is designed for slashing, not thrusting. 
+
+STATISTICS:
+
+Damage: 1D8
+Damage type: slashing
+Weight: 4
+Speed Factor: 5
+Proficiency Type: Long Sword
+Type: 1-handed
+Requires: 6 Strength
+Not Usable By:
+ Druid
+ Cleric
+ Mage
+ Beast Master~
+@66   = ~This fine crafted sword was made specifically for Nikita, she is the only one who can use it.
+
+STATISTICS:
+ 
+THAC0: +2 bonus, 
+Damage: 1D8 +2 Damage type: slashing
+Weight: 2
+Speed Factor: 3
+Proficiency Type: Long sword
+Type: 1-handed
+Requires: 6 Strength
+Usable By:
+ Nikita~
+@67   = ~Light Crossbow~
+@68   = ~Nikita's Light Crossbow~
+@69   = ~A crossbow is a bow mounted crosswise on a wooden or metal shaft, the latter called a tiller. The bow is usually made of ash or yew.  The crossbow fires a quarrel (also called a bolt).  Light crossbows not only weigh less than their heavy counterparts, they fire faster as well.
+
+STATISTICS:
+
+Weight: 7
+Speed Factor: 5
+Proficiency Type: Crossbow
+Type: 2-handed
+Requires: 8 Strength
+Not Usable By:
+ Druid
+ Cleric
+ Mage
+ Monk
+ Kensai
+ Cavalier~
+@70   = ~This crossbow was specially made for Nikita, she is the only one who can use it.
+
+STATISTICS:
+
+THAC0: +2 bonus
+Damage: +2 (missile)
+Special: 1 extra attack per round
+Weight: 5
+Speed Factor: 3
+Proficiency Type: Crossbow
+Type: 2-handed
+Requires: 8 Strength
+Usable By:
+Nikita~
+
+@71   = ~Alternate portrait for Nikita~
