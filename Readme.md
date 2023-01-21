@@ -1,4 +1,4 @@
-# WIP Dark Horizons WIP
+# Nikita NPC Mod
 
 ![Language](https://img.shields.io/static/v1?label=language&message=english%20%7C%20&color=informational)
 
@@ -19,6 +19,7 @@ NPC mod for Baldur's Gate 2 (BG2), Baldur's Gate Trilogy (BGT), Baldur's Gate 2 
 
 Nikita is a WeiDU-based mod for Baldur's Gate II: Shadows of Amn and Throne of Bhaal. This mod adds a new encounter, new items, dialogs between Nikita and fellow NPCs and the player's character. As usual, Nikita should be compatible with most other WeiDu-based mods, and should be installed after all official patches and preferably the Baldurdash Fixpack or G3's Fixpack. Nikita requires the Throne of Bhaal expansion pack. This mod uses files and effects that ToB has. (Originally included in Enhanced Edition). 
 
+Nikita already appeared in the [DarkHorizons mod](https://github.com/11jo/DarkHorizons) for BG1. (She is recrutable in BGEE only) 
 
 ## Install:
 -----------
@@ -77,6 +78,7 @@ Big thanks go to these following individuals for their assistance with Nikita:
 	Traification
 	Add component "Alternate portrait for Nikita" 
 	Delete Backup
+	Add Readme.md
 
 - Version 2.00 Beta Release.
 
