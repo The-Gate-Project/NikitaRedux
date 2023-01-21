@@ -1,0 +1,197 @@
+IF
+ See(Player1)
+ NumTimesTalkedTo(0)
+THEN
+ RESPONSE #100
+ Dialogue(Player1)
+END
+
+
+
+
+// Start quest 
+
+IF
+  InParty(Myself)
+  GlobalGT("Chapter","GLOBAL",5)
+  Global("NikMikeQuest","GLOBAL",0)
+THEN
+  RESPONSE #100
+	RealSetGlobalTimer("NikQuestBeginTime","GLOBAL",600)
+	SetGlobal("NikMikeQuest","GLOBAL",1)
+END
+
+IF
+  RealGlobalTimerExpired("NikQuestBeginTime","GLOBAL")
+  InParty(Myself)
+  Global("NikMikeQuest","GLOBAL",1)
+  AreaType(OUTDOOR)
+THEN
+  RESPONSE #100
+	CreateCreatureObjectOffset("cmniks1","cmniks1",[100.100])
+	SetGlobal("NikMikeQuest","GLOBAL",2)
+	ActionOverride("cmniks1",Dialog("nikita"))
+END
+
+// Complain timers
+
+IF
+  GlobalTimerExpired("NikitaComplainTime","GLOBAL")
+  Global("NikitaComplain","GLOBAL",0)
+  Global("NikitaMichaelQuestCompleted","GLOBAL",0)
+THEN
+    RESPONSE #100
+             SetGlobal("NikitaComplain","GLOBAL",1)
+             StartDialogueNoSet(Player1)
+END
+
+IF
+  GlobalTimerExpired("NikitaComplainTime","GLOBAL")
+  Global("NikitaComplain","GLOBAL",2)
+  Global("NikitaMichaelQuestCompleted","GLOBAL",0)
+THEN
+    RESPONSE #100
+             StartDialogueNoSet(Player1)
+END
+
+IF
+   !HasItem("CMNIKD1",Myself)
+   OR(6)
+      HasItem("CMNIKD1",Player1)
+      HasItem("CMNIKD1",Player2)
+      HasItem("CMNIKD1",Player3)
+      HasItem("CMNIKD1",Player4)
+      HasItem("CMNIKD1",Player5)
+      HasItem("CMNIKD1",Player6)
+THEN
+   RESPONSE #100
+     ActionOverride(Player1,GiveItem("CMNIKD1","nikita"))
+     ActionOverride(Player2,GiveItem("CMNIKD1","nikita"))
+     ActionOverride(Player3,GiveItem("CMNIKD1","nikita"))
+     ActionOverride(Player4,GiveItem("CMNIKD1","nikita"))
+     ActionOverride(Player5,GiveItem("CMNIKD1","nikita"))
+     ActionOverride(Player6,GiveItem("CMNIKD1","nikita"))
+     DisplayStringHead(Myself,99990)
+END
+
+IF
+   !HasItem("CMNIKL1",Myself)
+   OR(6)
+      HasItem("CMNIKL1",Player1)
+      HasItem("CMNIKL1",Player2)
+      HasItem("CMNIKL1",Player3)
+      HasItem("CMNIKL1",Player4)
+      HasItem("CMNIKL1",Player5)
+      HasItem("CMNIKL1",Player6)
+THEN
+   RESPONSE #100
+     ActionOverride(Player1,GiveItem("CMNIKL1","nikita"))
+     ActionOverride(Player2,GiveItem("CMNIKL1","nikita"))
+     ActionOverride(Player3,GiveItem("CMNIKL1","nikita"))
+     ActionOverride(Player4,GiveItem("CMNIKL1","nikita"))
+     ActionOverride(Player5,GiveItem("CMNIKL1","nikita"))
+     ActionOverride(Player6,GiveItem("CMNIKL1","nikita"))
+     DisplayStringHead(Myself,99990)
+END
+
+IF
+   !HasItem("CMNIKS1",Myself)
+   OR(6)
+      HasItem("CMNIKS1",Player1)
+      HasItem("CMNIKS1",Player2)
+      HasItem("CMNIKS1",Player3)
+      HasItem("CMNIKS1",Player4)
+      HasItem("CMNIKS1",Player5)
+      HasItem("CMNIKS1",Player6)
+THEN
+   RESPONSE #100
+     ActionOverride(Player1,GiveItem("CMNIKS1","nikita"))
+     ActionOverride(Player2,GiveItem("CMNIKS1","nikita"))
+     ActionOverride(Player3,GiveItem("CMNIKS1","nikita"))
+     ActionOverride(Player4,GiveItem("CMNIKS1","nikita"))
+     ActionOverride(Player5,GiveItem("CMNIKS1","nikita"))
+     ActionOverride(Player6,GiveItem("CMNIKS1","nikita"))
+     DisplayStringHead(Myself,99990)
+END
+
+IF
+   !HasItem("CMNIKX1",Myself)
+   OR(6)
+      HasItem("CMNIKX1",Player1)
+      HasItem("CMNIKX1",Player2)
+      HasItem("CMNIKX1",Player3)
+      HasItem("CMNIKX1",Player4)
+      HasItem("CMNIKX1",Player5)
+      HasItem("CMNIKX1",Player6)
+THEN
+   RESPONSE #100
+     ActionOverride(Player1,GiveItem("CMNIKX1","nikita"))
+     ActionOverride(Player2,GiveItem("CMNIKX1","nikita"))
+     ActionOverride(Player3,GiveItem("CMNIKX1","nikita"))
+     ActionOverride(Player4,GiveItem("CMNIKX1","nikita"))
+     ActionOverride(Player5,GiveItem("CMNIKX1","nikita"))
+     ActionOverride(Player6,GiveItem("CMNIKX1","nikita"))
+     DisplayStringHead(Myself,99990)
+END
+
+
+
+IF
+   !HasItem("CMNIKL1",Myself)
+THEN
+   RESPONSE #100
+ GiveItemCreate("CMNIKL1","Myself",0,0,0)
+END
+
+
+IF
+   !HasItem("CMNIKD1",Myself)
+THEN
+   RESPONSE #100
+ GiveItemCreate("CMNIKD1","Myself",0,0,0)
+END
+
+
+IF
+   !HasItem("CMNIKS1",Myself)
+THEN
+   RESPONSE #100
+ GiveItemCreate("CMNIKS1","Myself",0,0,0)
+END
+
+
+IF
+   !HasItem("CMNIKX1",Myself)
+THEN
+   RESPONSE #100
+ GiveItemCreate("CMNIKX1","Myself",0,0,0)
+END
+
+IF
+   NumItemsGT("CMNIKD1","Myself",1)
+THEN
+   RESPONSE #100
+      DestroyItem("CMNIKD1")
+END
+
+IF
+   NumItemsGT("CMNIKL1","Myself",1)
+THEN
+   RESPONSE #100
+      DestroyItem("CMNIKL1")
+END
+
+IF
+   NumItemsGT("CMNIKS1","Myself",1)
+THEN
+   RESPONSE #100
+      DestroyItem("CMNIKS1")
+END
+
+IF
+   NumItemsGT("CMNIKX1","Myself",1)
+THEN
+   RESPONSE #100
+      DestroyItem("CMNIKX1")
+END
+

@@ -1,0 +1,10 @@
+IF
+  Global("NikMikeQuest","GLOBAL",1)
+THEN
+ RESPONSE #100
+  CreateCreature("CMNIMIC",[2101.692],6)
+  CreateCreature("CMNIKS2",[1696.957],7)
+  CreateCreature("CMNIKS3",[1607.990],9)
+  CreateCreature("CMNIKS4",[1589.1076],7)
+  CreateCreature("CMNIKS5",[1802.902],5)
+END

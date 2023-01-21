@@ -1,0 +1,7 @@
+IF
+  Global("CM_NikitaSpawn","AR0406",0)
+THEN
+ RESPONSE #100
+  SetGlobal("CM_NikitaSpawn","AR0406",1)
+  CreateCreature("CMNIKITR",[801.499],5)
+END

@@ -1,0 +1,314 @@
+/*************************************************************************
+*									 *
+*									 *
+*		Nikita	Version 200					 *
+*									 *
+*				http://www.chosenofmystra.com		 *
+*									 *
+*			Copyright 2011 J.G. "Com_Solaufein" Scott        *
+*									 *
+*									 *
+*									 *
+*	       								 *
+*									 *
+*									 *
+**************************************************************************
+**/
+
+//tp2 Instructions
+BACKUP ~NikitaRedux/backup~
+AUTHOR ~"http://www.chosenofmystra.com"~
+BEGIN ~Nikita NPC Mod (Requires Throne of Bhaal)~
+
+PRINT ~/****************************************~
+PRINT ~*Nikita NPC Mod Version 200	       *~
+PRINT ~*http://www.chosenofmystra.com	       *~
+PRINT ~*	Copyright 2011 JG Scott        *~
+PRINT ~*	FOR USE WITH ToB Version 26498 *~
+PRINT ~*	THIS FILE WILL INSTALL         *~
+PRINT ~*	NIKITA IN YOUR BG	       *~
+PRINT ~*    II DIRECTORY.                      *~
+PRINT ~*****************************************~
+
+
+REQUIRE_FILE ~Data/25Dialog.bif~ ~You do not appear to have TOB installed.~
+
+APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
+UNLESS ~CD_STATE_NOTVALID~
+
+COPY ~NikitaRedux/portraits~ ~Override~
+
+COPY ~NikitaRedux/sounds~ ~Override~
+
+// Creature Files
+
+COPY ~NikitaRedux/cre/CMNIKITR.cre~ ~override\CMNIKITR.cre~
+  SAY NAME1 ~Nikita~
+  SAY NAME2 ~Nikita~
+  SAY INITIAL_MEETING  ~I see.~ [HFTHR029]
+  SAY MORALE   ~We can't win this.~ [HFTHR001]
+  SAY HAPPY    ~3~
+  SAY UNHAPPY_ANNOYED  ~4~
+  SAY UNHAPPY_SERIOUS  ~5~
+  SAY UNHAPPY_BREAKING  ~6~ 
+  SAY LEADER  ~Watch my back.~  [HFTHR008]
+  SAY TIRED  ~We should rest soon. I'm dying to get out of these clothes.~ [HFTHR010]
+  SAY BORED  ~I didn't come all of this way to die of boredom.~  [HFTHR012]
+  SAY BATTLE_CRY1   ~Lets spill some blood.~ [HFTHR003]
+  SAY BATTLE_CRY2   ~You wanna taste of this?~ [HFTHR004]
+  SAY BATTLE_CRY3  ~Are you ready for me?~ [HFTHR005]
+  SAY BATTLE_CRY4  ~Any last words?~ [HFTHR006]
+  SAY BATTLE_CRY5  ~You're gonna bleed.~ [HFTHR007]
+  SAY DAMAGE    ~Ughh~ [HFTHR034]
+  SAY DYING    ~Dead~ [HFTHR037]
+  SAY HURT     ~I feel so cold.~ [HFTHR014]
+  SAY AREA_FOREST    ~18~
+  SAY AREA_CITY      ~19~
+  SAY AREA_DUNGEON   ~20~
+  SAY AREA_DAY     ~21~
+  SAY AREA_NIGHT   ~22~
+  SAY SELECT_COMMON1   ~Yes?~  [HFTHR016]
+  SAY SELECT_COMMON2    ~I'm here.~ [HFTHR017]
+  SAY SELECT_COMMON3   ~You want me?~   [HFTHR018]
+  SAY SELECT_COMMON4   ~Ready and willing.~  [HFTHR019]
+  SAY SELECT_COMMON5   ~27~
+  SAY SELECT_COMMON6   ~28~
+  SAY SELECT_ACTION1   ~Right.~ [HFTHR023]
+  SAY SELECT_ACTION2   ~Very well.~ [HFTHR024]
+  SAY SELECT_ACTION3   ~Yes?~  [HFTHR025]
+  SAY SELECT_ACTION4   ~Whatever you say.~  [HFTHR026]
+  SAY SELECT_ACTION5    ~33~
+  SAY SELECT_ACTION6    ~34~
+  SAY SELECT_ACTION7    ~35~
+  SAY SELECT_RARE1     ~I'd kill for a hot bath right about now.~ [HFTHR030]
+  SAY SELECT_RARE2      ~Be careful where you point that thing.~ [HFTHR031]
+  SAY CRITICAL_HIT       ~You're gonna bleed.~ [HFTHR007]
+  SAY CRITICAL_MISS      ~Argh.~ [HFTHR034]
+  SAY TARGET_IMMUNE    ~40~
+  SAY INVENTORY_FULL   ~Don't expect me to carry the corpse back into town.~ [HFTHR040]
+  SAY PICKED_POCKET    ~Done~ [HFTHR027]
+  SAY HIDDEN_IN_SHADOWS  ~Done~ [HFTHR027]
+  SAY SPELL_DISRUPTED   ~44~
+  SAY SET_A_TRAP    ~45~
+  SAY BIO ~NIKITA's past is something that she keeps to herself. From what you do know is that she was an orphan for a time until she was brought into Section in her late teens. They trained her to be a charismatic assassin who killed evil individuals. All of this was done for the greater good. But over time Section became corrupt and started to mirror the evil they were fighting. Nikita was liberated from Section when you destroyed the organization back in Baldur's Gate. After much searching, Nikita found you in Amn and wishes to repay you by helping in any way she can.~
+
+COPY ~NikitaRedux/cre/CMNIKI25.cre~ ~override\CMNIKI25.cre~
+  SAY NAME1 ~Nikita~
+  SAY NAME2 ~Nikita~
+  SAY INITIAL_MEETING  ~I see.~ [HFTHR029]
+  SAY MORALE   ~We can't win this.~ [HFTHR001]
+  SAY HAPPY    ~3~
+  SAY UNHAPPY_ANNOYED  ~4~
+  SAY UNHAPPY_SERIOUS  ~5~
+  SAY UNHAPPY_BREAKING  ~6~ 
+  SAY LEADER  ~Watch my back.~  [HFTHR008]
+  SAY TIRED  ~We should rest soon. I'm dying to get out of these clothes.~ [HFTHR010]
+  SAY BORED  ~I didn't come all of this way to die of boredom.~  [HFTHR012]
+  SAY BATTLE_CRY1   ~Lets spill some blood.~ [HFTHR003]
+  SAY BATTLE_CRY2   ~You wanna taste of this?~ [HFTHR004]
+  SAY BATTLE_CRY3  ~Are you ready for me?~ [HFTHR005]
+  SAY BATTLE_CRY4  ~Any last words?~ [HFTHR006]
+  SAY BATTLE_CRY5  ~You're gonna bleed.~ [HFTHR007]
+  SAY DAMAGE    ~Ughh~ [HFTHR034]
+  SAY DYING    ~Dead~ [HFTHR037]
+  SAY HURT     ~I feel so cold.~ [HFTHR014]
+  SAY AREA_FOREST    ~18~
+  SAY AREA_CITY      ~19~
+  SAY AREA_DUNGEON   ~20~
+  SAY AREA_DAY     ~21~
+  SAY AREA_NIGHT   ~22~
+  SAY SELECT_COMMON1   ~Yes?~  [HFTHR016]
+  SAY SELECT_COMMON2    ~I'm here.~ [HFTHR017]
+  SAY SELECT_COMMON3   ~You want me?~   [HFTHR018]
+  SAY SELECT_COMMON4   ~Ready and willing.~  [HFTHR019]
+  SAY SELECT_COMMON5   ~27~
+  SAY SELECT_COMMON6   ~28~
+  SAY SELECT_ACTION1   ~Right.~ [HFTHR023]
+  SAY SELECT_ACTION2   ~Very well.~ [HFTHR024]
+  SAY SELECT_ACTION3   ~Yes?~  [HFTHR025]
+  SAY SELECT_ACTION4   ~Whatever you say.~  [HFTHR026]
+  SAY SELECT_ACTION5    ~33~
+  SAY SELECT_ACTION6    ~34~
+  SAY SELECT_ACTION7    ~35~
+  SAY SELECT_RARE1     ~I'd kill for a hot bath right about now.~ [HFTHR030]
+  SAY SELECT_RARE2      ~Be careful where you point that thing.~ [HFTHR031]
+  SAY CRITICAL_HIT       ~You're gonna bleed.~ [HFTHR007]
+  SAY CRITICAL_MISS      ~Argh.~ [HFTHR034]
+  SAY TARGET_IMMUNE    ~40~
+  SAY INVENTORY_FULL   ~Don't expect me to carry the corpse back into town.~ [HFTHR040]
+  SAY PICKED_POCKET    ~Done~ [HFTHR027]
+  SAY HIDDEN_IN_SHADOWS  ~Done~ [HFTHR027]
+  SAY SPELL_DISRUPTED   ~44~
+  SAY SET_A_TRAP    ~45~
+  SAY BIO ~NIKITA's past is something that she keeps to herself. From what you do know is that she was an orphan for a time until she was brought into Section in her late teens. They trained her to be a charismatic assassin who killed evil individuals. All of this was done for the greater good. But over time Section became corrupt and started to mirror the evil they were fighting. Nikita was liberated from Section when you destroyed the organization back in Baldur's Gate. After much searching, Nikita found you in Amn and wishes to repay you by helping in any way she can.~
+
+
+// Items
+
+COPY ~NikitaRedux/Items/CMNIKRD1.ITM~ ~Override~
+  SAY 0x8 ~Dagger~
+  SAY 0xC ~Nikita's Dagger~
+  SAY 0x50 ~The typical dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter than the dagger. 
+
+STATISTICS:
+
+Damage: 1D4
+Damage type: piercing
+Weight: 1
+Speed Factor: 2 
+Proficiency Type: Dagger
+Type: 1-handed
+Requires: 3 Strength
+Not Usable By:
+ Cleric
+ Beast Master~
+  SAY 0x54 ~The typical dagger has a pointed, double-edged blade, as opposed to a knife which has a single edge and is a bit shorter.  This particular dagger is magical, having special bonuses to its speed, accuracy, and damage it causes. Also, since it is magical, is it capable of striking opponents that are immune to normal weapons, such as vampires, elementals and mummies. This dagger has been dipped in cobra venom making it extra deadly.
+
+STATISTICS:
+
+THAC0: +3 bonus
+Damage: 1D4 +3
+Damage type: piercing
+Poison: 30 damage in 15 seconds (save vs. death for none)
+Weight: 0
+Speed Factor: 0 
+Proficiency Type: Dagger
+Type: 1-handed
+Require: 3 Strength
+Usable By:
+Nikita~
+
+
+COPY ~NikitaRedux/Items/CMNIKRL1.ITM~ ~Override~
+  SAY 0x8 ~Leather Armor~
+  SAY 0xC ~Nikita's Leather Armor~
+  SAY 0x50 ~This suit of leather armor is light and supple, and a pleasure to wear.
+
+STATISTICS:
+
+Armor Class: 8
+Weight: 15
+Requires: 3 Strength
+Not Usable By:
+ Mage
+ Kensai
+ Monk
+ Shapeshifter~
+  SAY 0x54 ~This is Nikita's custom made leather armor. It was specifically made for her.
+
+STATISTICS:
+
+Bonuses: +20% to hide in shadows
+Armor Class: 3
+Weight: 5
+Requires: 3 Strength
+Usable By:
+Nikita~
+
+COPY ~NikitaRedux/Items/CMNIKRS1.ITM~ ~Override~
+  SAY 0x8 ~Long Sword~
+  SAY 0xC ~Nikita's Long Sword~
+  SAY 0x50 ~These swords are usually referred to as doubled-edged swords, war swords, or military swords.  In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture, and may vary within the same culture depending on the era.  Among the most common characteristics of all long swords is their length, which ranges from 35 inches to 47 inches.  In the latter case, the blade is known to take up 40 inches of the total length.  Most long swords have a double-edged blade and a sharp point at the tip.  Despite the tip, the long sword is designed for slashing, not thrusting. 
+
+STATISTICS:
+
+Damage: 1D8
+Damage type: slashing
+Weight: 4
+Speed Factor: 5
+Proficiency Type: Long Sword
+Type: 1-handed
+Requires: 6 Strength
+Not Usable By:
+ Druid
+ Cleric
+ Mage
+ Beast Master~
+  SAY 0x54 ~This fine crafted sword was made specifically for Nikita, she is the only one who can use it.
+
+STATISTICS:
+ 
+THAC0: +2 bonus, 
+Damage: 1D8 +2 Damage type: slashing
+Weight: 2
+Speed Factor: 3
+Proficiency Type: Long sword
+Type: 1-handed
+Requires: 6 Strength
+Usable By:
+ Nikita~
+
+
+COPY ~NikitaRedux/Items/CMNIKRX1.ITM~ ~Override~
+  SAY 0x8 ~Light Crossbow~
+  SAY 0xC ~Nikita's Light Crossbow~
+  SAY 0x50 ~A crossbow is a bow mounted crosswise on a wooden or metal shaft, the latter called a tiller. The bow is usually made of ash or yew.  The crossbow fires a quarrel (also called a bolt).  Light crossbows not only weigh less than their heavy counterparts, they fire faster as well.
+
+STATISTICS:
+
+Weight: 7
+Speed Factor: 5
+Proficiency Type: Crossbow
+Type: 2-handed
+Requires: 8 Strength
+Not Usable By:
+ Druid
+ Cleric
+ Mage
+ Monk
+ Kensai
+ Cavalier~
+  SAY 0x54 ~This crossbow was specially made for Nikita, she is the only one who can use it.
+
+STATISTICS:
+
+THAC0: +2 bonus
+Damage: +2 (missile)
+Special: 1 extra attack per round
+Weight: 5
+Speed Factor: 3
+Proficiency Type: Crossbow
+Type: 2-handed
+Requires: 8 Strength
+Usable By:
+Nikita~
+
+
+// Add NPC dialog references
+
+
+APPEND ~interdia.2da~ ~CMNIKITA       BCMNIKIT       BCMNIK25~
+UNLESS ~CMNIKITA~
+
+APPEND ~pdialog.2da~ ~CMNIKITA        CMNIKITP             CMNIKITJ            CMNIKITD             CMNIK25P             CMNIK25J             CMNIK25D       CMNIK25~
+UNLESS ~CMNIKITA~
+
+// Dialog to compile
+
+COMPILE
+  ~NikitaRedux/dlg/bcmnikit.d~
+
+COMPILE
+  ~NikitaRedux/dlg/cmnikita.d~
+
+COMPILE
+  ~NikitaRedux/dlg/cmnikitj.d~
+
+
+  COMPILE
+  ~NikitaRedux/dlg/cmnik25.d~
+
+// Compile and append scripts
+
+EXTEND_BOTTOM ~AR0406.bcs~ ~NikitaRedux/bafs/AR0406.baf~
+
+COMPILE
+  ~NikitaRedux/bafs/cmnikita.baf~
+
+COMPILE
+ ~NikitaRedux/bafs/cmnik25.baf~
+
+
+
+AT_INTERACTIVE_EXIT ~VIEW NikitaRedux\readme_nikita.html~
+

@@ -1,0 +1,9 @@
+IF
+  CombatCounter(0)
+  Global("NikQuestEndGame","GLOBAL",0)
+  See("nikita")
+  InParty("nikita")
+THEN
+    RESPONSE #100
+             Dialogue("nikita")
+END
