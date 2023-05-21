@@ -32,7 +32,7 @@ ALWAYS
 
 //  ACTION_DEFINE_ARRAY fl#noconvert BEGIN END
 
- ACTION_DEFINE_ARRAY fl#reload BEGIN NikitaRedux_setup END
+ ACTION_DEFINE_ARRAY fl#reload BEGIN setup END
 
     LAF HANDLE_CHARSETS
       INT_VAR
@@ -45,7 +45,7 @@ ALWAYS
 END
 
 
-AUTO_TRA ~NikitaRedux/tra/%s~
+AUTO_TRA ~NikitaRedux/tra/autotra/%s~
 
 LANGUAGE
   ~English~
