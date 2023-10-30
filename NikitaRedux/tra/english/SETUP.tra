@@ -1,3 +1,6 @@
+@9001 = ~\([Oo]nly[ %tab%]+\)?[Uu]sable[ %tab%]+[Bb]y[ %tab%]*:~
+@9002 = ~\(Not[ %tab%]+\|Un\)[Uu]sable[ %tab%]+[Bb]y[ %tab%]*:~
+
 @0    = ~Nikita NPC Mod~
 @1    = ~/****************************************~
 @2    = ~*Nikita NPC Mod Version 200	       *~
@@ -66,6 +69,7 @@ Speed Factor: 2
 Proficiency Type: Dagger
 Type: 1-handed
 Requires: 3 Strength
+
 Not Usable By:
  Cleric
  Beast Master~
@@ -82,6 +86,7 @@ Speed Factor: 0
 Proficiency Type: Dagger
 Type: 1-handed
 Require: 3 Strength
+
 Usable By:
 Nikita~
 @59   = ~Leather Armor~
@@ -93,6 +98,7 @@ STATISTICS:
 Armor Class: 8
 Weight: 15
 Requires: 3 Strength
+
 Not Usable By:
  Mage
  Kensai
@@ -106,6 +112,7 @@ Bonuses: +20% to hide in shadows
 Armor Class: 3
 Weight: 5
 Requires: 3 Strength
+
 Usable By:
 Nikita~
 @63   = ~Long Sword~
@@ -121,6 +128,7 @@ Speed Factor: 5
 Proficiency Type: Long Sword
 Type: 1-handed
 Requires: 6 Strength
+
 Not Usable By:
  Druid
  Cleric
@@ -129,6 +137,9 @@ Not Usable By:
 @66   = ~This fine crafted sword was made specifically for Nikita, she is the only one who can use it.
 
 STATISTICS:
+
+Combat abilities:
+- Deals an extra 2d4 +2 fire damage to the target
  
 THAC0: +2 bonus, 
 Damage: 1D8 +2 Damage type: slashing
@@ -137,6 +148,7 @@ Speed Factor: 3
 Proficiency Type: Long sword
 Type: 1-handed
 Requires: 6 Strength
+
 Usable By:
  Nikita~
 @67   = ~Light Crossbow~
@@ -150,6 +162,7 @@ Speed Factor: 5
 Proficiency Type: Crossbow
 Type: 2-handed
 Requires: 8 Strength
+
 Not Usable By:
  Druid
  Cleric
@@ -169,7 +182,14 @@ Speed Factor: 3
 Proficiency Type: Crossbow
 Type: 2-handed
 Requires: 8 Strength
+
 Usable By:
 Nikita~
 
 @71   = ~Alternate portrait for Nikita~
+
+
+@80   = ~Nikita is the only one who can stab with this dagger~
+@81   = ~Nikita is the only one who can wear this armor~
+@82   = ~Nikita is the only one who can wield this sword~
+@83   = ~Nikita is the only one who can use this crossbow~

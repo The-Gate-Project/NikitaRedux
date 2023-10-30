@@ -4,6 +4,8 @@
 
 **Autor** : **CoM_Solaufein**
 
+[Link to full readme](https://htmlpreview.github.io/?https://github.com/The-Gate-Project/NikitaRedux/blob/main/NikitaRedux/readme_nikita.Github.html)
+
 [Link to original Mod Forum]()
 
 [Link to G3 Mod Forum](https://www.gibberlings3.net/forums/topic/23513-com-nikita-open-beta-released/)
@@ -69,16 +71,24 @@ Big thanks go to these following individuals for their assistance with Nikita:
 ## Version History:
 -------------------
 
-- Version 2.50
+- Version 2.1  
 
-    CHANGES
+    CHANGES  
 	
-	EE / EET compatibility
-	Add Handle Charset and IconV
-	Traification
-	Add component "Alternate portrait for Nikita" 
-	Delete Backup
-	Add Readme.md
+	InfinityAutoPackager  
+	Metadata and Labels  
+	Correct item to match description for CMNIKRD1  
+	Correct description to match item for CMNIKRS1  
+	EE / EET compatibility  
+	  EET chapter  
+	  Autotra, Handle Charset and IconV  
+	  Description for EE (GW fonction)  
+	Proper items restriction to Nikita (item_use.2DA) (EE / Tobex Only)  
+	 Enable all items usability to allow Nikita kit to be changed  
+	Traification  
+	Add component "Alternate portrait for Nikita"   
+	Delete Backup  
+	Add Readme.md  
 
 - Version 2.00 Beta Release.
 

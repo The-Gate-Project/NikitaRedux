@@ -18,9 +18,24 @@
 //tp2 Instructions
 BACKUP ~NikitaRedux/backup~
 AUTHOR ~"http://www.chosenofmystra.com"~
-README ~NikitaRedux\readme_nikita.html~
 
-ALWAYS
+VERSION ~v2.1~
+
+README ~NikitaRedux/readme_nikita.html~
+
+ALWAYS	
+
+ACTION_IF GAME_IS ~eet~ BEGIN
+			OUTER_SET bg2_chapter = 12
+		END ELSE BEGIN
+			OUTER_SET bg2_chapter = 0
+		END
+		OUTER_FOR (i = 1 ; i <= 10 ; ++i) BEGIN
+			OUTER_SET bg2_chapter = bg2_chapter + 1
+			OUTER_SPRINT name_source ~bg2_chapter_%i%~
+			OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+		END
+
     //Copies tra files into the autotra-folder (to leave the originals untouched)
     DEFINE_ACTION_FUNCTION autotra_workaround BEGIN
       COPY ~NikitaRedux/tra/english~  ~NikitaRedux/tra/autotra/%LANGUAGE%~
@@ -42,6 +57,9 @@ ALWAYS
 //        noconvert_array = fl#noconvert
         reload_array = fl#reload
  END
+
+INCLUDE ~NikitaRedux/Lib/gw_functions.tpa~
+
 END
 
 
@@ -53,6 +71,7 @@ LANGUAGE
   ~NikitaRedux/tra/english/setup.tra~
 
 BEGIN @0 /* Nikita NPC Mod */
+LABEL ~CoM_Solaufein-Nikita_Main~
 REQUIRE_FILE ~Data/25Dialog.bif~ ~You do not appear to have TOB installed.~
 
 PRINT @1 /* **************************************** */
@@ -188,7 +207,7 @@ COPY ~NikitaRedux/cre/CMNIKI25.cre~ ~override\CMNIKI25.cre~
 COPY ~NikitaRedux/Items/CMNIKRD1.ITM~ ~Override~
   SAY 0x8 @55 /* Dagger */
   SAY 0xC @56 /* Nikita's Dagger */
-  SAY 0x50 @57 /* The typical dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter than the dagger. 
+  LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@57" END /* The typical dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter than the dagger. 
 
 STATISTICS:
 
@@ -202,7 +221,8 @@ Requires: 3 Strength
 Not Usable By:
  Cleric
  Beast Master */
-  SAY 0x54 @58 /* The typical dagger has a pointed, double-edged blade, as opposed to a knife which has a single edge and is a bit shorter.  This particular dagger is magical, having special bonuses to its speed, accuracy, and damage it causes. Also, since it is magical, is it capable of striking opponents that are immune to normal weapons, such as vampires, elementals and mummies. This dagger has been dipped in cobra venom making it extra deadly.
+  
+  LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@58" END /* The typical dagger has a pointed, double-edged blade, as opposed to a knife which has a single edge and is a bit shorter.  This particular dagger is magical, having special bonuses to its speed, accuracy, and damage it causes. Also, since it is magical, is it capable of striking opponents that are immune to normal weapons, such as vampires, elementals and mummies. This dagger has been dipped in cobra venom making it extra deadly.
 
 STATISTICS:
 
@@ -218,11 +238,25 @@ Require: 3 Strength
 Usable By:
 Nikita */
 
+ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
+
+OUTER_SET COM_NikkiDagger = RESOLVE_STR_REF (@81 /* Nikita is the only one who can stab with this dagger */)
+OUTER_SET COM_Nikki = RESOLVE_STR_REF (@10 /* Nikita */)
+APPEND ~ITEM_USE.2DA~ ~CMNIKRD1   cmnikita      %COM_NikkiDagger%      2          %COM_Nikki%~ UNLESS ~CMNIKRD1~
+// APPEND ~ITEM_USE.2DA~ ~ItemName   ActorScriptName      %STRREF  for Flag%      Flag (1, 2 ou 3)          %ActorName%~ UNLESS ~ItemName~
+
+END ELSE ACTION_IF (GAME_IS ~tob bgt~ AND MOD_IS_INSTALLED ~SETUP-TOBEX.TP2~ ~100~) BEGIN
+
+OUTER_SET COM_Nikki = RESOLVE_STR_REF (@10 /* Nikita */)
+APPEND ~ITEM_USE.2DA~ ~CMNIKRD1   cmnikita      -1      2          %COM_Nikki%~ UNLESS ~CMNIKRD1~
+	
+END 
+
 
 COPY ~NikitaRedux/Items/CMNIKRL1.ITM~ ~Override~
   SAY 0x8 @59 /* Leather Armor */
   SAY 0xC @60 /* Nikita's Leather Armor */
-  SAY 0x50 @61 /* This suit of leather armor is light and supple, and a pleasure to wear.
+  LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@61" END /* This suit of leather armor is light and supple, and a pleasure to wear.
 
 STATISTICS:
 
@@ -234,7 +268,7 @@ Not Usable By:
  Kensai
  Monk
  Shapeshifter */
-  SAY 0x54 @62 /* This is Nikita's custom made leather armor. It was specifically made for her.
+  LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@62" END /* This is Nikita's custom made leather armor. It was specifically made for her.
 
 STATISTICS:
 
@@ -245,10 +279,25 @@ Requires: 3 Strength
 Usable By:
 Nikita */
 
+ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
+
+OUTER_SET COM_Nikkileath = RESOLVE_STR_REF (@81 /* Nikita is the only one who can wear this armor */)
+OUTER_SET COM_Nikki = RESOLVE_STR_REF (@10 /* Nikita */)
+APPEND ~ITEM_USE.2DA~ ~CMNIKRL1   cmnikita      %COM_Nikkileath%      2          %COM_Nikki%~ UNLESS ~CMNIKRL1~
+// APPEND ~ITEM_USE.2DA~ ~ItemName   ActorScriptName      %STRREF  for Flag%      Flag (1, 2 ou 3)          %ActorName%~ UNLESS ~ItemName~
+
+END ELSE ACTION_IF (GAME_IS ~tob bgt~ AND MOD_IS_INSTALLED ~SETUP-TOBEX.TP2~ ~100~) BEGIN
+
+OUTER_SET COM_Nikki = RESOLVE_STR_REF (@10 /* Nikita */)
+APPEND ~ITEM_USE.2DA~ ~CMNIKRL1   cmnikita      -1      2          %COM_Nikki%~ UNLESS ~CMNIKRL1~
+	
+END 
+
+
 COPY ~NikitaRedux/Items/CMNIKRS1.ITM~ ~Override~
   SAY 0x8 @63 /* Long Sword */
   SAY 0xC @64 /* Nikita's Long Sword */
-  SAY 0x50 @65 /* These swords are usually referred to as doubled-edged swords, war swords, or military swords.  In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture, and may vary within the same culture depending on the era.  Among the most common characteristics of all long swords is their length, which ranges from 35 inches to 47 inches.  In the latter case, the blade is known to take up 40 inches of the total length.  Most long swords have a double-edged blade and a sharp point at the tip.  Despite the tip, the long sword is designed for slashing, not thrusting. 
+  LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@65" END /* These swords are usually referred to as doubled-edged swords, war swords, or military swords.  In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture, and may vary within the same culture depending on the era.  Among the most common characteristics of all long swords is their length, which ranges from 35 inches to 47 inches.  In the latter case, the blade is known to take up 40 inches of the total length.  Most long swords have a double-edged blade and a sharp point at the tip.  Despite the tip, the long sword is designed for slashing, not thrusting. 
 
 STATISTICS:
 
@@ -264,9 +313,12 @@ Not Usable By:
  Cleric
  Mage
  Beast Master */
-  SAY 0x54 @66 /* This fine crafted sword was made specifically for Nikita, she is the only one who can use it.
+  LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@66" END /* This fine crafted sword was made specifically for Nikita, she is the only one who can use it.
 
 STATISTICS:
+
+Combat abilities:
+- Deals an extra 2d4 +2 fire damage to the target
  
 THAC0: +2 bonus, 
 Damage: 1D8 +2 Damage type: slashing
@@ -278,11 +330,25 @@ Requires: 6 Strength
 Usable By:
  Nikita */
 
+ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
+
+OUTER_SET COM_NikkiSword = RESOLVE_STR_REF (@82 /* Nikita is the only one who can wield this sword */)
+OUTER_SET COM_Nikki = RESOLVE_STR_REF (@10 /* Nikita */)
+APPEND ~ITEM_USE.2DA~ ~CMNIKRS1   cmnikita      %COM_NikkiSword%      2          %COM_Nikki%~ UNLESS ~CMNIKRS1~
+// APPEND ~ITEM_USE.2DA~ ~ItemName   ActorScriptName      %STRREF  for Flag%      Flag (1, 2 ou 3)          %ActorName%~ UNLESS ~ItemName~
+
+END ELSE ACTION_IF (GAME_IS ~tob bgt~ AND MOD_IS_INSTALLED ~SETUP-TOBEX.TP2~ ~100~) BEGIN
+
+OUTER_SET COM_Nikki = RESOLVE_STR_REF (@10 /* Nikita */)
+APPEND ~ITEM_USE.2DA~ ~CMNIKRS1   cmnikita      -1      2          %COM_Nikki%~ UNLESS ~CMNIKRS1~
+	
+END 
+
 
 COPY ~NikitaRedux/Items/CMNIKRX1.ITM~ ~Override~
   SAY 0x8 @67 /* Light Crossbow */
   SAY 0xC @68 /* Nikita's Light Crossbow */
-  SAY 0x50 @69 /* A crossbow is a bow mounted crosswise on a wooden or metal shaft, the latter called a tiller. The bow is usually made of ash or yew.  The crossbow fires a quarrel (also called a bolt).  Light crossbows not only weigh less than their heavy counterparts, they fire faster as well.
+  LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@69" END /* A crossbow is a bow mounted crosswise on a wooden or metal shaft, the latter called a tiller. The bow is usually made of ash or yew.  The crossbow fires a quarrel (also called a bolt).  Light crossbows not only weigh less than their heavy counterparts, they fire faster as well.
 
 STATISTICS:
 
@@ -298,7 +364,7 @@ Not Usable By:
  Monk
  Kensai
  Cavalier */
-  SAY 0x54 @70 /* This crossbow was specially made for Nikita, she is the only one who can use it.
+  LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@70" END /* This crossbow was specially made for Nikita, she is the only one who can use it.
 
 STATISTICS:
 
@@ -313,6 +379,20 @@ Requires: 8 Strength
 Usable By:
 Nikita */
 
+ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
+
+OUTER_SET COM_NikkiCross = RESOLVE_STR_REF (@83 /* Nikita is the only one who can use this crossbow */)
+OUTER_SET COM_Nikki = RESOLVE_STR_REF (@10 /* Nikita */)
+APPEND ~ITEM_USE.2DA~ ~CMNIKRX1   cmnikita      %COM_NikkiCross%      2          %COM_Nikki%~ UNLESS ~CMNIKRX1~
+// APPEND ~ITEM_USE.2DA~ ~ItemName   ActorScriptName      %STRREF  for Flag%      Flag (1, 2 ou 3)          %ActorName%~ UNLESS ~ItemName~
+
+END ELSE ACTION_IF (GAME_IS ~tob bgt~ AND MOD_IS_INSTALLED ~SETUP-TOBEX.TP2~ ~100~) BEGIN
+
+OUTER_SET COM_Nikki = RESOLVE_STR_REF (@10 /* Nikita */)
+APPEND ~ITEM_USE.2DA~ ~CMNIKRX1   cmnikita      -1      2          %COM_Nikki%~ UNLESS ~CMNIKRX1~
+	
+END 
+
 
 // Add NPC dialog references
 
@@ -325,39 +405,18 @@ UNLESS ~CMNIKITA~
 
 // Dialog to compile
 
-  ACTION_IF GAME_IS ~eet~ THEN BEGIN
+COMPILE EVALUATE_BUFFER ~NikitaRedux/dlg/bcmnikit.d~
+
+COMPILE ~NikitaRedux/dlg/cmnikita.d~
+
+COMPILE EVALUATE_BUFFER ~NikitaRedux/dlg/cmnikitj.d~
   
-COMPILE
-  ~NikitaRedux/EETdlg/bcmnikit.d~
-
-END ELSE BEGIN
-
-COMPILE
-  ~NikitaRedux/dlg/bcmnikit.d~
-  
-END
-
-COMPILE
-  ~NikitaRedux/dlg/cmnikita.d~
- 
-  ACTION_IF GAME_IS ~eet~ THEN BEGIN
-  
-COMPILE
-  ~NikitaRedux/EETdlg/cmnikitj.d~
-
-END ELSE BEGIN
-
-COMPILE
-  ~NikitaRedux/dlg/cmnikitj.d~
-  
-END
-
-  COMPILE
-  ~NikitaRedux/dlg/cmnik25.d~
+COMPILE ~NikitaRedux/dlg/cmnik25.d~
 
 // Compile and append scripts
 
 EXTEND_BOTTOM ~AR0406.bcs~ ~NikitaRedux/bafs/AR0406.baf~
+    EVALUATE_BUFFER
 
 COMPILE
   ~NikitaRedux/bafs/cmnikita.baf~
@@ -368,6 +427,7 @@ COMPILE
 //Optional Portrait
 
 BEGIN @71 /* Nikita NPC Mod */
+LABEL ~CoM_Solaufein-Nikita_Portrait~
 
   ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
   

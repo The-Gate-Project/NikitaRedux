@@ -1408,7 +1408,7 @@ CHAIN
 IF ~InParty("Yoshimo")
 See("Yoshimo")
 !StateCheck("Yoshimo",STATE_SLEEPING)
-GlobalLT("Chapter","GLOBAL",4)
+GlobalLT("Chapter","GLOBAL","%bg2_chapter_4%")
 Global("NikYoshiChat2","LOCALS",0)~ THEN BCMNIKIT NikYosh2
 @1043 /* I was wondering about something Yoshimo. */
 DO ~SetGlobal("NikYoshiChat2","LOCALS",1)~
@@ -1428,7 +1428,7 @@ CHAIN
 IF ~InParty("cmnikita")
 See("cmnikita")
 !StateCheck("cmnikita",STATE_SLEEPING)
-GlobalLT("Chapter","GLOBAL",4)
+GlobalLT("Chapter","GLOBAL","%bg2_chapter_4%")
 Global("NikYoshiChat3","LOCALS",0)
 OR(3)
 AreaCheck("AR1602")
