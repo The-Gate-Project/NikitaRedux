@@ -240,14 +240,14 @@ Nikita */
 
 ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
 
-OUTER_SET COM_NikkiDagger = RESOLVE_STR_REF (@81 /* Nikita is the only one who can stab with this dagger */)
+OUTER_SET COM_NikkiDagger = RESOLVE_STR_REF (@80 /* Nikita is the only one who can stab with this dagger */)
 OUTER_SET COM_Nikki = RESOLVE_STR_REF (@10 /* Nikita */)
 APPEND ~ITEM_USE.2DA~ ~CMNIKRD1   cmnikita      %COM_NikkiDagger%      2          %COM_Nikki%~ UNLESS ~CMNIKRD1~
 // APPEND ~ITEM_USE.2DA~ ~ItemName   ActorScriptName      %STRREF  for Flag%      Flag (1, 2 ou 3)          %ActorName%~ UNLESS ~ItemName~
 
 END ELSE ACTION_IF (GAME_IS ~tob bgt~ AND MOD_IS_INSTALLED ~SETUP-TOBEX.TP2~ ~100~) BEGIN
 
-OUTER_SET COM_NikkiDagger = RESOLVE_STR_REF (@81 /* Nikita is the only one who can stab with this dagger */)
+OUTER_SET COM_NikkiDagger = RESOLVE_STR_REF (@80 /* Nikita is the only one who can stab with this dagger */)
 APPEND ~ITEM_USE.2DA~ ~CMNIKRD1   cmnikita      -1      2          %COM_NikkiDagger%~ UNLESS ~CMNIKRD1~
 	
 END 
