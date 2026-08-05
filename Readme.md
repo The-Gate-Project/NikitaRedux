@@ -2,7 +2,7 @@
 
 ![Language](https://img.shields.io/static/v1?label=language&message=english%20%7C%20&color=informational)
 
-**Autor** : **CoM_Solaufein**
+**Author** : **CoM_Solaufein**
 
 [Link to full readme](https://htmlpreview.github.io/?https://github.com/The-Gate-Project/NikitaRedux/blob/main/NikitaRedux/readme_nikita.Github.html)
 
