@@ -1,7 +1,12 @@
 IF
-  Global("CM_NikitaSpawn","AR0406",0)
+	Global("CM_NikitaSpawn","AR0406",0)
+	!Exists("CMNIKITA")
+	!BeenInParty("CMNIKITA")
+	!Dead("CMNIKITA")
+	!InMyArea("CMNIKITA")
 THEN
- RESPONSE #100
-  SetGlobal("CM_NikitaSpawn","AR0406",1)
-  CreateCreature("CMNIKITR",[801.499],5)
+	RESPONSE #100
+		SetGlobal("CM_NikitaSpawn","AR0406",1)
+		SetGlobal("BG2_Nikita","GLOBAL",1) // Block any dialog from BG1 and SoD
+		CreateCreature("CMNIKITR",[801.499],5)
 END

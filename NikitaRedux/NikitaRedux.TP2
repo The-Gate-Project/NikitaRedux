@@ -16,7 +16,7 @@
 **/
 
 //tp2 Instructions
-BACKUP ~NikitaRedux/backup~
+BACKUP ~weidu_external/NikitaRedux/backup~
 AUTHOR ~"http://www.chosenofmystra.com"~
 
 VERSION ~v2.1~
@@ -38,8 +38,8 @@ ACTION_IF GAME_IS ~eet~ BEGIN
 
     //Copies tra files into the autotra-folder (to leave the originals untouched)
     DEFINE_ACTION_FUNCTION autotra_workaround BEGIN
-      COPY ~NikitaRedux/tra/english~  ~NikitaRedux/tra/autotra/%LANGUAGE%~
-      COPY ~NikitaRedux/tra/%LANGUAGE%~  ~NikitaRedux/tra/autotra/%LANGUAGE%~
+      COPY ~NikitaRedux/tra/english~  ~weidu_external/NikitaRedux/tra/autotra/%LANGUAGE%~
+      COPY ~NikitaRedux/tra/%LANGUAGE%~  ~weidu_external/NikitaRedux/tra/autotra/%LANGUAGE%~
     END
 
     LAF autotra_workaround END
@@ -53,7 +53,9 @@ ACTION_IF GAME_IS ~eet~ BEGIN
       INT_VAR
         infer_charsets = 1
       STR_VAR
-        tra_path = EVAL ~NikitaRedux/tra/autotra~
+        tra_path = EVAL ~weidu_external/NikitaRedux/tra/autotra~
+        out_path = EVAL ~weidu_external/NikitaRedux/tra/autotra~
+        iconv_path = ~NikitaRedux/tra/autotra/iconv~
 //        noconvert_array = fl#noconvert
         reload_array = fl#reload
  END
@@ -63,7 +65,7 @@ INCLUDE ~NikitaRedux/Lib/gw_functions.tpa~
 END
 
 
-AUTO_TRA ~NikitaRedux/tra/autotra/%s~
+AUTO_TRA ~weidu_external/NikitaRedux/tra/autotra/%s~
 
 LANGUAGE
   ~English~
@@ -393,9 +395,18 @@ APPEND ~ITEM_USE.2DA~ ~CMNIKRX1   cmnikita      -1      2          %COM_NikkiCro
 	
 END 
 
+ACTION_IF GAME_IS ~eet~ BEGIN
+	EXTEND_BOTTOM ~AR0406.bcs~ ~NikitaRedux/bafs/Continuous_nikita.baf~ EVALUATE_BUFFER
+END
+
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+	OUTER_SPRINT "XEquipItem" ~XEquipItem("CMNIKRD1","CMNIKITA",SLOT_SHIELD,EQUIP)~
+END ELSE BEGIN
+	OUTER_SPRINT "XEquipItem" ~~
+END
+
 
 // Add NPC dialog references
-
 
 APPEND ~interdia.2da~ ~CMNIKITA       BCMNIKIT       BCMNIK25~
 UNLESS ~CMNIKITA~
@@ -407,7 +418,7 @@ UNLESS ~CMNIKITA~
 
 COMPILE EVALUATE_BUFFER ~NikitaRedux/dlg/bcmnikit.d~
 
-COMPILE ~NikitaRedux/dlg/cmnikita.d~
+COMPILE EVALUATE_BUFFER~NikitaRedux/dlg/cmnikita.d~
 
 COMPILE EVALUATE_BUFFER ~NikitaRedux/dlg/cmnikitj.d~
   
@@ -423,6 +434,32 @@ COMPILE
 
 COMPILE
  ~NikitaRedux/bafs/cmnik25.baf~
+
+	// Variable used by FUNCTION GW_FIND_DLG_RESPONSE_STRING to find after which transition NPC will be recalled by Fate Spirit.
+			OUTER_SET fatesp_string = 89602  // Neera = @89602
+
+ACTION_IF GAME_IS ~eet~ BEGIN
+  INCLUDE ~EET/other/EET_functions.tph~
+  LAF ~EET_NPC_TRANSITION~
+    INT_VAR
+      type = 3
+      default_ToB = 1
+//      clean_ToB = 1
+    STR_VAR
+      dv = "CMNIKITA"
+      override_SoA = "CMNIKITA"
+//      override_ToB = "xxxxx25S"
+      dialog_ToB = "CMNIK25"
+      cre_ToB = "CMNIKI25"
+      traFile = EVAL "weidu_external/NikitaRedux/tra/autotra/%LANGUAGE%/CMNIK25.tra"
+      string = "@1525"
+      stringPosDV = "Neera"
+      clean_ToB_DV = "CMNIKITA"
+  END
+END ELSE BEGIN
+		INCLUDE ~NikitaRedux/lib/gw_dlg_functions.tpa~
+  COMPILE EVALUATE_BUFFER ~NikitaRedux/dlg/FATESP.d~ USING ~weidu_external/NikitaRedux/tra/autotra/%LANGUAGE%/CMNIK25.tra~
+END
  
 //Optional Portrait
 
@@ -438,5 +475,3 @@ END ELSE BEGIN
 COPY ~NikitaRedux/portraits/portraits2~ ~Override~
 
 END
-
-
