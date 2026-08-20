@@ -30,10 +30,13 @@ THEN
 		GiveItemCreate("CMNIKRS1","cmnikita",0,0,0)
 		GiveItemCreate("SW1H43","cmnikita",0,0,0)
 		GiveItemCreate("CMNIKRX1","cmnikita",0,0,0)
-		ActionOverride("CMNIKITA",EquipItem("CMNIKRL1"))
-		ActionOverride("CMNIKITA",EquipItem("CMNIKRS1"))
-		%XEquipItem%
-		ActionOverride("CMNIKITA",EquipItem(""))
+		ActionOverride("CMNIKITA",SetItemFlags("CMNIKRD1",IDENTIFIED,TRUE))
+		ActionOverride("CMNIKITA",SetItemFlags("CMNIKRX1",IDENTIFIED,TRUE))
+		ActionOverride("CMNIKITA",SetItemFlags("CMNIKRL1",IDENTIFIED,TRUE))
+		ActionOverride("CMNIKITA",SetItemFlags("CMNIKRS1",IDENTIFIED,TRUE))
+		%XEquipItem_dagger%
+		%XEquipItem_armor%
+		%XEquipItem_sword%
 		SetInterrupt(TRUE)
 		Continue()
 END

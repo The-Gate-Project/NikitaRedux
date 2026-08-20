@@ -396,9 +396,13 @@ APPEND ~ITEM_USE.2DA~ ~CMNIKRX1   cmnikita      -1      2          %COM_NikkiCro
 END 
 
 ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
-	OUTER_SPRINT "XEquipItem" ~XEquipItem("CMNIKRD1","CMNIKITA",SLOT_SHIELD,EQUIP)~
+	OUTER_SPRINT "XEquipItem_dagger" ~XEquipItem("CMNIKRD1","CMNIKITA",SLOT_SHIELD,EQUIP)~
+	OUTER_SPRINT "XEquipItem_sword" ~XEquipItem("CMNIKRS1","CMNIKITA",SLOT_WEAPON1,EQUIP)~
+	OUTER_SPRINT "XEquipItem_armor" ~XEquipItem("CMNIKRL1","CMNIKITA",SLOT_ARMOR,EQUIP)~
 END ELSE BEGIN
-	OUTER_SPRINT "XEquipItem" ~~
+	OUTER_SPRINT "XEquipItem_armor" ~ActionOverride("CMNIKITA",EquipItem("CMNIKRL1"))~
+	OUTER_SPRINT "XEquipItem_sword" ~ActionOverride("CMNIKITA",EquipItem("CMNIKRS1"))~
+	OUTER_SPRINT "XEquipItem_dagger" ~~
 END
 
 ACTION_IF GAME_IS ~eet~ BEGIN
