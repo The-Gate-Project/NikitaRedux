@@ -392,12 +392,8 @@ END ELSE ACTION_IF (GAME_IS ~tob bgt~ AND MOD_IS_INSTALLED ~SETUP-TOBEX.TP2~ ~10
 
 OUTER_SET COM_NikkiCross = RESOLVE_STR_REF (@83 /* Nikita is the only one who can use this crossbow */)
 APPEND ~ITEM_USE.2DA~ ~CMNIKRX1   cmnikita      -1      2          %COM_NikkiCross%~ UNLESS ~CMNIKRX1~
-	
-END 
 
-ACTION_IF GAME_IS ~eet~ BEGIN
-	EXTEND_BOTTOM ~AR0406.bcs~ ~NikitaRedux/bafs/Continuous_nikita.baf~ EVALUATE_BUFFER
-END
+END 
 
 ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
 	OUTER_SPRINT "XEquipItem" ~XEquipItem("CMNIKRD1","CMNIKITA",SLOT_SHIELD,EQUIP)~
@@ -405,13 +401,17 @@ END ELSE BEGIN
 	OUTER_SPRINT "XEquipItem" ~~
 END
 
+ACTION_IF GAME_IS ~eet~ BEGIN
+	EXTEND_BOTTOM ~AR0406.bcs~ ~NikitaRedux/bafs/Continuous_nikita.baf~ EVALUATE_BUFFER
+END
+
 
 // Add NPC dialog references
 
-APPEND ~interdia.2da~ ~CMNIKITA       BCMNIKIT       BCMNIK25~
+APPEND ~pdialog.2da~ ~CMNIKITA        CMNIKITP             CMNIKITJ            CMNIKITD             CMNIK25P             CMNIK25J             CMNIK25D       CMNIK25~
 UNLESS ~CMNIKITA~
 
-APPEND ~pdialog.2da~ ~CMNIKITA        CMNIKITP             CMNIKITJ            CMNIKITD             CMNIK25P             CMNIK25J             CMNIK25D       CMNIK25~
+APPEND ~interdia.2da~ ~CMNIKITA       BCMNIKIT       BCMNIK25~
 UNLESS ~CMNIKITA~
 
 // Dialog to compile
