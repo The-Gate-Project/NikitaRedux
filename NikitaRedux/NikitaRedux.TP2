@@ -393,7 +393,7 @@ END ELSE ACTION_IF (GAME_IS ~tob bgt~ AND MOD_IS_INSTALLED ~SETUP-TOBEX.TP2~ ~10
 OUTER_SET COM_NikkiCross = RESOLVE_STR_REF (@83 /* Nikita is the only one who can use this crossbow */)
 APPEND ~ITEM_USE.2DA~ ~CMNIKRX1   cmnikita      -1      2          %COM_NikkiCross%~ UNLESS ~CMNIKRX1~
 
-END 
+END
 
 ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
 	OUTER_SPRINT "XEquipItem_dagger" ~XEquipItem("CMNIKRD1","CMNIKITA",SLOT_SHIELD,EQUIP)~

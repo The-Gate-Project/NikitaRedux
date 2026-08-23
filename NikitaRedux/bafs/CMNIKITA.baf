@@ -8,6 +8,18 @@ StartDialogueNoSet([PC])
 Wait(1)
 END
 
+IF
+	GlobalGT("Continuous_BG2_Nikita","LOCALS",0)
+	Global("Continuous_Nikita_BG2_XP","LOCALS",0)
+    XPLT(Myself,165000)
+	InParty(Myself)
+THEN
+    RESPONSE #100
+		SetGlobal("Continuous_Nikita_BG2_XP","LOCALS",1)
+        AddXPObject(Myself,165000)
+		Continue()
+END
+
 // First friend talk
 
 IF 

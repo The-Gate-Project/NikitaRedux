@@ -1,7 +1,19 @@
 IF
-Global("CM_NikitaSummoned","GLOBAL",1)
+	Global("CM_NikitaSummoned","GLOBAL",1)
 THEN
-RESPONSE #100
-StartDialogueNoSet([PC])
-Wait(1)
+	RESPONSE #100
+		StartDialogueNoSet([PC])
+		Wait(1)
+END
+
+IF
+	GlobalGT("CM_NikitaSummoned","GLOBAL",0)
+	Global("Continuous_NikitaSummoned_XP","LOCALS",0)
+    XPLT(Myself,2500000)
+	InParty(Myself)
+THEN
+    RESPONSE #100
+		SetGlobal("Continuous_NikitaSummoned_XP","LOCALS",1)
+        AddXPObject(Myself,2500000)
+		Continue()
 END
