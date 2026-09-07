@@ -1,6 +1,18 @@
 # Nikita NPC Mod
 
-![Language](https://img.shields.io/static/v1?label=language&message=english%20%7C%20&color=informational)
+[![Release](https://img.shields.io/github/v/release/The-Gate-Project/NikitaRedux?include_prereleases&color=41788a)](https://github.com/The-Gate-Project/NikitaRedux/releases)
+[![Published](https://img.shields.io/github/release-date-pre/The-Gate-Project/NikitaRedux?display_date=published_at&label=published&color=014a69)](https://github.com/The-Gate-Project/NikitaRedux/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/The-Gate-Project/NikitaRedux/total?color=41788a)](https://github.com/The-Gate-Project/NikitaRedux/releases)
+
+[![Language](https://img.shields.io/badge/language-english-014a69)](https://github.com/The-Gate-Project/NikitaRedux/releases)
+[![Games](https://img.shields.io/badge/games-BG1%20%a0%20BGEE%20%a0%20BGT%20%a0%20EET-41788a)](https://github.com/The-Gate-Project/NikitaRedux/releases)
+
+<!--
+
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FThe-Gate-Project%2FNikitaRedux&countColor=41788a&style=flat)
+
+[![Platform](https://img.shields.io/badge/platform-Windows%20%a0%20macOS%20%a0%20Linux%20%a0%20Project%20Infinity-014a69)](https://github.com/The-Gate-Project/NikitaRedux/releases)
+-->
 
 **Author** : **CoM_Solaufein**
 
@@ -70,6 +82,12 @@ Big thanks go to these following individuals for their assistance with Nikita:
 
 ## Version History:
 -------------------
+
+- Version 2.2.
+
+    CHANGES
+
+	Continuous with DarkHorizons
 
 - Version 2.1  
 

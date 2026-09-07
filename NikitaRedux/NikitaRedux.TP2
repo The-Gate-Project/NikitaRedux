@@ -19,11 +19,11 @@
 BACKUP ~weidu_external/NikitaRedux/backup~
 AUTHOR ~"http://www.chosenofmystra.com"~
 
-VERSION ~v2.1~
+VERSION ~v2.2~
 
 README ~NikitaRedux/readme_nikita.html~
 
-ALWAYS	
+ALWAYS
 
 ACTION_IF GAME_IS ~eet~ BEGIN
 			OUTER_SET bg2_chapter = 12
@@ -90,7 +90,7 @@ APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
 UNLESS ~CD_STATE_NOTVALID~
 
   ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
-  
+
 COPY ~NikitaRedux/EEportraits~ ~Override~
 
 END ELSE BEGIN
@@ -111,7 +111,7 @@ COPY ~NikitaRedux/cre/CMNIKITR.cre~ ~override\CMNIKITR.cre~
   SAY HAPPY    @13 /* 3 */
   SAY UNHAPPY_ANNOYED  @14 /* 4 */
   SAY UNHAPPY_SERIOUS  @15 /* 5 */
-  SAY UNHAPPY_BREAKING  @16 /* 6 */ 
+  SAY UNHAPPY_BREAKING  @16 /* 6 */
   SAY LEADER  @17 /* Watch my back. */
   SAY TIRED  @18 /* We should rest soon. I'm dying to get out of these clothes. */
   SAY BORED  @19 /* I didn't come all of this way to die of boredom. */
@@ -161,7 +161,7 @@ COPY ~NikitaRedux/cre/CMNIKI25.cre~ ~override\CMNIKI25.cre~
   SAY HAPPY    @13 /* 3 */
   SAY UNHAPPY_ANNOYED  @14 /* 4 */
   SAY UNHAPPY_SERIOUS  @15 /* 5 */
-  SAY UNHAPPY_BREAKING  @16 /* 6 */ 
+  SAY UNHAPPY_BREAKING  @16 /* 6 */
   SAY LEADER  @17 /* Watch my back. */
   SAY TIRED  @18 /* We should rest soon. I'm dying to get out of these clothes. */
   SAY BORED  @19 /* I didn't come all of this way to die of boredom. */
@@ -209,21 +209,21 @@ COPY ~NikitaRedux/cre/CMNIKI25.cre~ ~override\CMNIKI25.cre~
 COPY ~NikitaRedux/Items/CMNIKRD1.ITM~ ~Override~
   SAY 0x8 @55 /* Dagger */
   SAY 0xC @56 /* Nikita's Dagger */
-  LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@57" END /* The typical dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter than the dagger. 
+  LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@57" END /* The typical dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter than the dagger.
 
 STATISTICS:
 
 Damage: 1D4
 Damage type: piercing
 Weight: 1
-Speed Factor: 2 
+Speed Factor: 2
 Proficiency Type: Dagger
 Type: 1-handed
 Requires: 3 Strength
 Not Usable By:
  Cleric
  Beast Master */
-  
+
   LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@58" END /* The typical dagger has a pointed, double-edged blade, as opposed to a knife which has a single edge and is a bit shorter.  This particular dagger is magical, having special bonuses to its speed, accuracy, and damage it causes. Also, since it is magical, is it capable of striking opponents that are immune to normal weapons, such as vampires, elementals and mummies. This dagger has been dipped in cobra venom making it extra deadly.
 
 STATISTICS:
@@ -233,7 +233,7 @@ Damage: 1D4 +3
 Damage type: piercing
 Poison: 30 damage in 15 seconds (save vs. death for none)
 Weight: 0
-Speed Factor: 0 
+Speed Factor: 0
 Proficiency Type: Dagger
 Type: 1-handed
 Require: 3 Strength
@@ -251,8 +251,8 @@ END ELSE ACTION_IF (GAME_IS ~tob bgt~ AND MOD_IS_INSTALLED ~SETUP-TOBEX.TP2~ ~10
 
 OUTER_SET COM_NikkiDagger = RESOLVE_STR_REF (@80 /* Nikita is the only one who can stab with this dagger */)
 APPEND ~ITEM_USE.2DA~ ~CMNIKRD1   cmnikita      -1      2          %COM_NikkiDagger%~ UNLESS ~CMNIKRD1~
-	
-END 
+
+END
 
 
 COPY ~NikitaRedux/Items/CMNIKRL1.ITM~ ~Override~
@@ -292,14 +292,14 @@ END ELSE ACTION_IF (GAME_IS ~tob bgt~ AND MOD_IS_INSTALLED ~SETUP-TOBEX.TP2~ ~10
 
 OUTER_SET COM_Nikkileath = RESOLVE_STR_REF (@81 /* Nikita is the only one who can wear this armor */)
 APPEND ~ITEM_USE.2DA~ ~CMNIKRL1   cmnikita      -1      2          %COM_Nikkileath%~ UNLESS ~CMNIKRL1~
-	
-END 
+
+END
 
 
 COPY ~NikitaRedux/Items/CMNIKRS1.ITM~ ~Override~
   SAY 0x8 @63 /* Long Sword */
   SAY 0xC @64 /* Nikita's Long Sword */
-  LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@65" END /* These swords are usually referred to as doubled-edged swords, war swords, or military swords.  In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture, and may vary within the same culture depending on the era.  Among the most common characteristics of all long swords is their length, which ranges from 35 inches to 47 inches.  In the latter case, the blade is known to take up 40 inches of the total length.  Most long swords have a double-edged blade and a sharp point at the tip.  Despite the tip, the long sword is designed for slashing, not thrusting. 
+  LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@65" END /* These swords are usually referred to as doubled-edged swords, war swords, or military swords.  In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture, and may vary within the same culture depending on the era.  Among the most common characteristics of all long swords is their length, which ranges from 35 inches to 47 inches.  In the latter case, the blade is known to take up 40 inches of the total length.  Most long swords have a double-edged blade and a sharp point at the tip.  Despite the tip, the long sword is designed for slashing, not thrusting.
 
 STATISTICS:
 
@@ -321,8 +321,8 @@ STATISTICS:
 
 Combat abilities:
 - Deals an extra 2d4 +2 fire damage to the target
- 
-THAC0: +2 bonus, 
+
+THAC0: +2 bonus,
 Damage: 1D8 +2 Damage type: slashing
 Weight: 2
 Speed Factor: 3
@@ -343,8 +343,8 @@ END ELSE ACTION_IF (GAME_IS ~tob bgt~ AND MOD_IS_INSTALLED ~SETUP-TOBEX.TP2~ ~10
 
 OUTER_SET COM_NikkiSword = RESOLVE_STR_REF (@82 /* Nikita is the only one who can wield this sword */)
 APPEND ~ITEM_USE.2DA~ ~CMNIKRS1   cmnikita      -1      2          %COM_NikkiSword%~ UNLESS ~CMNIKRS1~
-	
-END 
+
+END
 
 
 COPY ~NikitaRedux/Items/CMNIKRX1.ITM~ ~Override~
@@ -425,7 +425,7 @@ COMPILE EVALUATE_BUFFER ~NikitaRedux/dlg/bcmnikit.d~
 COMPILE EVALUATE_BUFFER~NikitaRedux/dlg/cmnikita.d~
 
 COMPILE EVALUATE_BUFFER ~NikitaRedux/dlg/cmnikitj.d~
-  
+
 COMPILE ~NikitaRedux/dlg/cmnik25.d~
 
 // Compile and append scripts
@@ -464,14 +464,14 @@ END ELSE BEGIN
 		INCLUDE ~NikitaRedux/lib/gw_dlg_functions.tpa~
   COMPILE EVALUATE_BUFFER ~NikitaRedux/dlg/FATESP.d~ USING ~weidu_external/NikitaRedux/tra/autotra/%LANGUAGE%/CMNIK25.tra~
 END
- 
+
 //Optional Portrait
 
 BEGIN @71 /* Nikita NPC Mod */
 LABEL ~CoM_Solaufein-Nikita_Portrait~
 
   ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
-  
+
 COPY ~NikitaRedux/EEportraits/portraits2~ ~Override~
 
 END ELSE BEGIN
