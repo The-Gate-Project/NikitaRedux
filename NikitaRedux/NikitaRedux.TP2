@@ -72,6 +72,11 @@ LANGUAGE
   ~english~
   ~NikitaRedux/tra/english/setup.tra~
 
+LANGUAGE
+  ~Schinese~
+  ~schinese~
+  ~NikitaRedux/tra/schinese/setup.tra~
+
 BEGIN @0 /* Nikita NPC Mod */
 LABEL ~CoM_Solaufein-Nikita_Main~
 REQUIRE_FILE ~Data/25Dialog.bif~ ~You do not appear to have TOB installed.~
